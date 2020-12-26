@@ -5,12 +5,14 @@ window.title("Miles to Kilometer Converter")
 window.minsize(height=200, width=200)
 window.config(padx=20, pady=20)
 
+CONV_CONST = 1.609344
+
 
 # function to calculate
 def calculate():
     input_val = miles_text.get(1.0, END)
-    input_val_int = int(input_val)
-    result = round(input_val_int*1.609344)
+    input_val_int = float(input_val)
+    result = round(input_val_int*CONV_CONST)
     result_label.config(text=f"{result}")
 
 
@@ -25,7 +27,7 @@ miles_text.grid(column=2, row=1)
 miles_text.config(padx=5, pady=5)
 
 # miles label
-miles_label = Label(text="miles")
+miles_label = Label(text="Miles")
 miles_label.grid(column=3, row=1)
 miles_label.config(padx=10, pady=10)
 
